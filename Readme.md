@@ -8,7 +8,7 @@ this is a mirror repository, rabbitio also lives on [snix.ir public git service]
 ### usage and docs
 simple encrypt/decrypting plain text and cipher text with rabbitio  
 key must be exactly 16 byte len, iv is optional but must be either zero (for nothing) or 8 byte len  
-you can replace `"snix.ir/rabbitio"` to `"github.com/sina-ghaderi/rabbitio"` to use github mirror repository
+you can replace `"snix.ir/rabbitio"` with `"github.com/sina-ghaderi/rabbitio"` to use github mirror repository
 
 ```go
 package main
