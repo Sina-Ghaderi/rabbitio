@@ -1,6 +1,6 @@
 # rabbitio
 rabbitio is a rabbit stream cipher packge based on RFC 4503 for golang  
-rabbit is a super-fast lightweight stream cipher witch uses a 128-bit key and a 64-bit initialization vector, this cipher was designed in 2003 and released in 2008   
+rabbit is a super-fast lightweight stream cipher which uses a 128-bit key and a 64-bit initialization vector, this cipher was designed in 2003 and released in 2008   
 
 
 this is a mirror repository, rabbitio also lives on [snix.ir public git service](https://snix.ir/rabbitio)
