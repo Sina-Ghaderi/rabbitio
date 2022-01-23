@@ -8,7 +8,7 @@ import (
 	"strings"
 	"testing"
 
-	"snix.ir/rabbitio"
+	"github.com/sina-ghaderi/rabbitio"
 )
 
 func TestNewWriterCipher(t *testing.T) {
