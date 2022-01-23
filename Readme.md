@@ -126,30 +126,7 @@ func main() {
 ### test and benchmarking 
 unit test and benchmarking provided too, run `go test -v` or `go test -bench=. -benchmem` on project root directory
 
-```
-=== RUN   TestNewWriterCipher
-    io_test.go:21: encrypting plain text ---
-    io_test.go:31: cipher-text: 592dc2be03869c48222805050eedd698e1ae8f39dee6bb8fdbae8b2fa18f50116a23
-    io_test.go:32: decrypting cipher text ---
---- PASS: TestNewWriterCipher (0.00s)
-=== RUN   TestNewReaderCipher
-    io_test.go:56: encrypting plain text ---
-    io_test.go:66: cipher-text: 493ddca75ae88d5a0839441504bfc194e2b2ca059be58985c6fa8a288f8b59597b29
-    io_test.go:67: decrypting cipher text ---
---- PASS: TestNewReaderCipher (0.00s)
-=== RUN   TestNewCipher
-    io_test.go:93: cipher-text: 493ddca75ae88d5a0839441504bfc194e2b2ca059be58985c6fa8a288f8b59597b29
---- PASS: TestNewCipher (0.00s)
-goos: linux
-goarch: amd64
-pkg: github.com/sina-ghaderi/rabbitio
-cpu: Intel(R) Core(TM) i7-7700HQ CPU @ 2.80GHz
-BenchmarkNewCipher
-BenchmarkNewCipher/bench_1
-BenchmarkNewCipher/bench_1-8             1000000              1084 ns/op             368 B/op          5 allocs/op
-PASS
-ok      github.com/sina-ghaderi/rabbitio        1.100s
-```
+
 
 feel free to email me sina@snix.ir if you want to contribute to this project
 
