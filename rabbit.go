@@ -8,6 +8,11 @@ import (
 )
 
 const (
+	RabbitKeyLen = 0x10
+	RabbitIVXLen = 0x08
+)
+
+const (
 	invalidKeyLen = "rabbitio: key must be 16 byte len, not more not less"
 	invalidIVXLen = "rabbitio: iv must be 8 byte len or nothing (zero) at all"
 )
@@ -28,10 +33,10 @@ type rabbitCipher struct {
 // according to RFC 4503, key must be 16 byte len, iv on the other hand is optional but
 // must be either zero len or 8 byte len, error will be returned on wrong key/iv len
 func NewCipher(key []byte, iv []byte) (cipher.Stream, error) {
-	if len(key) != 0x10 {
+	if len(key) != RabbitKeyLen {
 		return nil, errors.New(invalidKeyLen)
 	}
-	if len(iv) != 0x00 && len(iv) != 0x08 {
+	if len(iv) != 0x00 && len(iv) != RabbitIVXLen {
 		return nil, errors.New(invalidIVXLen)
 	}
 	var k [0x04]uint32
