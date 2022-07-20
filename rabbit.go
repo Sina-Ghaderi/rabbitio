@@ -8,8 +8,8 @@ import (
 )
 
 const (
-	RabbitKeyLen = 0x10
-	RabbitIVXLen = 0x08
+	KeyLen = 0x10
+	IVXLen = 0x08
 )
 
 var (
@@ -33,10 +33,10 @@ type rabbitCipher struct {
 // according to RFC 4503, key must be 16 byte len, iv on the other hand is optional but
 // must be either zero len or 8 byte len, error will be returned on wrong key/iv len
 func NewCipher(key []byte, iv []byte) (cipher.Stream, error) {
-	if len(key) != RabbitKeyLen {
+	if len(key) != KeyLen {
 		return nil, ErrInvalidKey
 	}
-	if len(iv) != 0x00 && len(iv) != RabbitIVXLen {
+	if len(iv) != 0x00 && len(iv) != IVXLen {
 		return nil, ErrInvalidIVX
 	}
 	var k [0x04]uint32
