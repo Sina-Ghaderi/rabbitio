@@ -1,3 +1,3 @@
 module github.com/sina-ghaderi/rabbitio
 
-go 1.18
+go 1.17
