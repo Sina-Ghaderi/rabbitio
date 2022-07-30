@@ -13,12 +13,15 @@ const (
 )
 
 var (
-	ErrInvalidKey = errors.New("rabbitio: key must be 16 byte len, not more not less")
-	ErrInvalidIVX = errors.New("rabbitio: iv must be 8 byte len or nothing (zero) at all")
+	ErrInvalidKey = errors.New("rabbitio: rabbit key must be exactly 16 byte len")
+	ErrInvalidIVX = errors.New("rabbitio: rabbit iv must be 8 byte len or nothing (zero) at all")
 )
 
 var aro = []uint32{
-	0x4D34D34D, 0xD34D34D3, 0x34D34D34, 0x4D34D34D, 0xD34D34D3, 0x34D34D34, 0x4D34D34D, 0xD34D34D3,
+	0x4D34D34D, 0xD34D34D3,
+	0x34D34D34, 0x4D34D34D,
+	0xD34D34D3, 0x34D34D34,
+	0x4D34D34D, 0xD34D34D3,
 }
 
 type rabbitCipher struct {
