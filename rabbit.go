@@ -14,7 +14,7 @@ const (
 
 var (
 	ErrInvalidKey = errors.New("rabbitio: rabbit key must be exactly 16 byte len")
-	ErrInvalidIVX = errors.New("rabbitio: rabbit iv must be 8 byte len or nothing (zero) at all")
+	ErrInvalidIVX = errors.New("rabbitio: rabbit iv must be either 8 or zero byte len")
 )
 
 var aro = []uint32{
