@@ -136,6 +136,15 @@ func (r *rabbitCipher) extract() {
 // XORKeyStream read from src and perform xor on every elemnt of src and
 // write result on dst
 func (r *rabbitCipher) XORKeyStream(dst, src []byte) {
+
+	if len(dst) < len(src) {
+		panic("rabbitio: output smaller than input")
+	}
+
+	if InexactOverlap(dst, src) {
+		panic("rabbitio: invalid buffer memory overlap")
+	}
+
 	for i := range src {
 		if len(r.ks) == 0x00 {
 			r.extract()
