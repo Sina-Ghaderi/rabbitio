@@ -1,6 +1,6 @@
 //go:build !purego
 
-package rabbitio
+package subtle
 
 import "unsafe"
 

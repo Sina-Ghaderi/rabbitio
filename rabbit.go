@@ -5,6 +5,8 @@ import (
 	"encoding/binary"
 	"errors"
 	"math/bits"
+
+	"github.com/sina-ghaderi/rabbitio/subtle"
 )
 
 const (
@@ -141,7 +143,7 @@ func (r *rabbitCipher) XORKeyStream(dst, src []byte) {
 		panic("rabbitio: output smaller than input")
 	}
 
-	if InexactOverlap(dst, src) {
+	if subtle.InexactOverlap(dst, src) {
 		panic("rabbitio: invalid buffer memory overlap")
 	}
 
